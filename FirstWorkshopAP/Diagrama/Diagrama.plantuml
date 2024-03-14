@@ -1,0 +1,46 @@
+@startuml
+
+class Engine {
+  - engine_type: str
+  - potency: int
+  - weight: float
+  + Engine()
+}
+
+class Vehicle {
+  - vehicle_type: str
+  - chassis: str
+  - model: str
+  - gas_consumption: float
+  - year: int
+  - engine: Engine
+  + Vehicle(chassis, model, year, engine)
+  + calculate_gas_consumption(): float
+}
+
+class Car {
+  - num_doors: int
+}
+
+class Truck {
+  - payload_capacity: int
+}
+
+class Yacht {
+  - length: int
+}
+
+class Motorcycle {
+  - num_wheels: int
+}
+
+Vehicle o-- Engine
+
+
+Vehicle <|-- Car
+Vehicle <|-- Truck
+Vehicle <|-- Yacht
+Vehicle <|-- Motorcycle
+
+
+@enduml
