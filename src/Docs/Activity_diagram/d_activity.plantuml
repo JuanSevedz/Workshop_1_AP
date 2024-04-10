@@ -1,0 +1,17 @@
+@startuml Buyer_ad
+ 
+start
+:Browse Suppliers;
+:View Product Catalogs;
+:Contact Supplier;
+if (Satisfied) then (yes)
+  :Negotiate Terms;
+  :Finalize Deal;
+  :Place Order;
+  :Arrange Payment;
+  :Receive Products;
+else (no)
+  stop
+endif
+
+@enduml
