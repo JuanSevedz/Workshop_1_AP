@@ -1,0 +1,9 @@
+{
+    "action": "add_engine",
+    "data": {
+      "engine_type": "Electric",
+      "potency": 150,
+      "weight": 200
+    }
+  }
+  

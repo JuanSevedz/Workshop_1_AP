@@ -1,5 +1,5 @@
 @startuml Buyer_ad
- 
+
 start
 :Browse Suppliers;
 :View Product Catalogs;
@@ -10,6 +10,17 @@ if (Satisfied) then (yes)
   :Place Order;
   :Arrange Payment;
   :Receive Products;
+elseif (Add Vehicle or Engine) then
+  :Select option to add vehicle or engine;
+  if (Option == Add Vehicle) then (yes)
+    :Provide vehicle details;
+    :System validates and adds vehicle to catalog;
+  elseif (Option == Add Engine) then (no)
+    :Provide engine details;
+    :System validates and adds engine to catalog;
+  else
+    :Display error message;
+  endif
 else (no)
   stop
 endif

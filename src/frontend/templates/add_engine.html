@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Engine</title>
+</head>
+<body>
+    <h1>Add Engine</h1>
+    <form id="engineForm">
+        <label for="engineType">Engine Type:</label>
+        <input type="text" id="engineType" name="engineType" required><br><br>
+        
+        <label for="potency">Potency:</label>
+        <input type="number" id="potency" name="potency" required><br><br>
+        
+        <label for="weight">Weight:</label>
+        <input type="number" id="weight" name="weight" required><br><br>
+        
+        <button type="submit">Add Engine</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#engineForm').submit(function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Collect form data
+                var formData = {
+                    'engine_type': $('#engineType').val(),
+                    'potency': $('#potency').val(),
+                    'weight': $('#weight').val()
+                };
+
+                // Send data to backend
+                $.ajax({
+                    type: 'POST',
+                    url: '/add_engine',
+                    contentType: 'application/json',
+                    data: JSON.stringify(formData),
+                    success: function(response) {
+                        alert(response.message); // Show success message
+                    },
+                    error: function(xhr, status, error) {
+                        var errorMessage = xhr.responseJSON.message;
+                        alert(errorMessage); // Show error message
+                    }
+                });
+            });
+        });
+    </script>
+     <a href="main.html">Back to Main Menu</a>
+</body>
+</html>

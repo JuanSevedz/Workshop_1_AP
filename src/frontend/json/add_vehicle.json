@@ -1,0 +1,17 @@
+{
+    "action": "add_vehicle",
+    "data": {
+      "vehicle_type": "Car",
+      "chassis": "A",
+      "model": "Hatchback",
+      "year": 2023,
+      "gas_consumption": 320.0,
+      "engine": {
+        "engine_type": "Hybrid",
+        "potency": 180,
+        "weight": 250
+      },
+      "num_doors": 5
+    }
+  }
+  

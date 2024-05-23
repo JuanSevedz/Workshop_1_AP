@@ -1,0 +1,57 @@
+{
+    "vehicles": [
+      {
+        "vehicle_type": "Car",
+        "chassis": "A",
+        "model": "Sedan",
+        "year": 2022,
+        "gas_consumption": 350.0,
+        "engine": {
+          "engine_type": "Gasoline",
+          "potency": 200,
+          "weight": 300
+        },
+        "num_doors": 4
+      },
+      {
+        "vehicle_type": "Truck",
+        "chassis": "B",
+        "model": "Pickup",
+        "year": 2020,
+        "gas_consumption": 315.0,
+        "engine": {
+          "engine_type": "Gasoline",
+          "potency": 200,
+          "weight": 300
+        },
+        "payload_capacity": 1000
+      },
+      {
+        "vehicle_type": "Yacht",
+        "chassis": "A",
+        "model": "Luxury",
+        "year": 2023,
+        "gas_consumption": 250.0,
+        "engine": {
+          "engine_type": "Diesel",
+          "potency": 300,
+          "weight": 500
+        },
+        "length": 50
+      },
+      {
+        "vehicle_type": "Motorcycle",
+        "chassis": "B",
+        "model": "Sport",
+        "year": 2021,
+        "gas_consumption": 200.0,
+        "engine": {
+          "engine_type": "Gasoline",
+          "potency": 150,
+          "weight": 200
+        },
+        "num_wheels": 2
+      }
+    ]
+  }
+  

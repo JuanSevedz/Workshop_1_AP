@@ -1,0 +1,29 @@
+@startuml sequence_d
+
+participant User
+participant Client
+participant Server
+participant Catalog
+participant Vehicle
+participant Engine
+participant Car
+participant Truck
+participant Yatch
+participant Motorcycle
+database Database
+
+User -> Client: interact with UI
+Client -> Server: createVehicle()
+Server -> Catalog: createVehicle()
+Catalog -> Vehicle: createVehicle()
+Vehicle -> Engine: createEngine()
+Vehicle -> Engine: setEngineProperties()
+Vehicle -> Vehicle: setVehicleProperties()
+Vehicle -> Catalog: addVehicleToCatalog()
+Catalog -> Database: insertVehicleIntoDatabase()
+Database --> Catalog: Success
+Catalog --> Server: Success
+Server --> Client: Success
+Client --> User: Success
+
+@enduml

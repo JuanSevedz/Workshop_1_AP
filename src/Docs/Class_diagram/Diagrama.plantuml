@@ -1,46 +1,51 @@
-@startuml
+@startuml class
 
 class Engine {
-  - engine_type: str
-  - potency: int
-  - weight: float
-  + Engine()
+    - engine_type: string
+    - potency: int
+    - weight: float
 }
 
 class Vehicle {
-  - vehicle_type: str
-  - chassis: str
-  - model: str
-  - gas_consumption: float
-  - year: int
-  - engine: Engine
-  + Vehicle(chassis, model, year, engine)
-  + calculate_gas_consumption(): float
+    - vehicle_type: string
+    - chassis: string
+    - model: string
+    - gas_consumption: float
+    - year: int
+    - engine: Engine
+    + calculate_gas_consumption(): float
 }
 
 class Car {
-  - num_doors: int
+    - num_doors: int
 }
 
 class Truck {
-  - payload_capacity: int
+    - payload_capacity: float
 }
 
 class Yacht {
-  - length: int
+    - length: float
 }
 
 class Motorcycle {
-  - num_wheels: int
+    - num_wheels: int
 }
 
-Vehicle o-- Engine
+class EngineCatalog {
+    + add_engine(): void
+}
 
+class VehicleCatalog {
+    + add_vehicle(): void
+}
 
-Vehicle <|-- Car
-Vehicle <|-- Truck
-Vehicle <|-- Yacht
-Vehicle <|-- Motorcycle
-
+Vehicle --|> Engine
+Car --|> Vehicle
+Truck --|> Vehicle
+Yacht --|> Vehicle
+Motorcycle --|> Vehicle
+EngineCatalog --|> Engine
+VehicleCatalog --|> Vehicle
 
 @enduml

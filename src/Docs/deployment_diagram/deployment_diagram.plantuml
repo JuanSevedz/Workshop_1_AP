@@ -1,0 +1,28 @@
+@startuml
+
+node "User" as User
+node "Client" as Client {
+    artifact "UserInterface.py"
+}
+node "Server" as Server {
+    artifact "Catalog.py"
+    artifact "Vehicle.py"
+    artifact "Engine.py"
+    artifact "Car.py"
+    artifact "Truck.py"
+    artifact "Yatch.py"
+    artifact "Motorcycle.py"
+    artifact "EngineCatalog.py"
+    artifact "VehicleCatalog.py"
+    database "Database" as DB
+}
+
+User --> Client: Interacts with UI
+Client --> Server: HTTP Request
+Server --> Server: Process Request
+Server --> DB: Access Database
+DB --> Server: Return Data
+Server --> Client: HTTP Response
+Client --> User: Displays Response
+
+@enduml

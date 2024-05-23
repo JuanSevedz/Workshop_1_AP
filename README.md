@@ -1,4 +1,4 @@
-# FirstWorkshopAP
+# Workshop 3
 This is a program to define a catalog of vehicles, with the next requeriments:
 
 Each vehicle has at least engine, chasis (A or B), model, gas consumption, and year.

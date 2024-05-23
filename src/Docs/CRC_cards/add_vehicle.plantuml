@@ -1,0 +1,7 @@
+@startuml addv
+
+class VehicleCatalog {
+    + add_vehicle(): void
+}
+
+@enduml

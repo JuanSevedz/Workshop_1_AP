@@ -1,0 +1,7 @@
+@startuml adde
+
+class EngineCatalog {
+    + add_engine(): void
+}
+
+@enduml

@@ -189,18 +189,28 @@ def add_vehicle_to_catalog(vehicles):
     vehicle.gas_consumption = vehicle.calculate_gas_consumption()
     vehicles.append(vehicle)
     print("Vehicle added to catalog.")
-
-
-def menu(vehicles):
+def add_engine_to_catalog(engines):
+    """"
+    Esta función añade un nuevo motor al catálogo.
     """
-    This  function displays the main menu and handles user inputs.
+    engine_type = input("Enter engine type: ")
+    potency = int(input("Enter engine potency: "))
+    weight = float(input("Enter engine weight: "))
+    engine = Engine(engine_type, potency, weight)
+    engines.append(engine)
+    print("Engine added to catalog.")
+
+def menu(vehicles, engines):
+    """
+    Esta función muestra el menú principal y maneja las entradas del usuario.
     """
     while True:
         print("\nMenu:")
         print("1. Show Catalog")
         print("2. Show vehicles of a specific type")
         print("3. Add a vehicle to the catalog")
-        print("4. Exit")
+        print("4. Add an engine to the catalog")
+        print("5. Exit")
         choice = input("Enter your choice: ")
 
         if choice == '1':
@@ -210,14 +220,17 @@ def menu(vehicles):
             if vehicle_type in ['Car', 'Truck', 'Yacht', 'Motorcycle']:
                 show_vehicle_type(vehicles, eval(vehicle_type))
             else:
-                print("Invalid vehicle type.Please choose one  of the options above.")
+                print("Invalid vehicle type. Please choose one of the options above.")
         elif choice == '3':
             add_vehicle_to_catalog(vehicles)
         elif choice == '4':
+            add_engine_to_catalog(engines)
+        elif choice == '5':
             print("Exiting program.")
             break
         else:
-            print("Invalid choice. Please enter a number from 1 to 4.")
+            print("Invalid choice. Please enter a number from 1 to 5.")
 
-#Deploy the menu
-menu(vehicles)
+# Inicializamos una lista vacía para los motores y los pasamos al menú
+engines = []
+menu(vehicles, engines)

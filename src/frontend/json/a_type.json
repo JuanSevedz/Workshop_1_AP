@@ -1,0 +1,7 @@
+{
+    "action": "show_specific_type",
+    "data": {
+      "vehicle_type": "Truck"
+    }
+  }
+  
